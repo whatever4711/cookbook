@@ -1,7 +1,7 @@
 \documentclass[%
 a4paper,
 twoside,
-11pt
+12pt
 ]{article}
 
 % encoding, font, language
@@ -12,6 +12,7 @@ twoside,
 
 \usepackage{nicefrac}
 \usepackage{textcomp}
+\usepackage{setspace}
 
 \usepackage[
 %    handwritten,
@@ -20,7 +21,7 @@ twoside,
 ]
 {config/xcookybooky}
 
-\usepackage{blindtext}    % only needed for generating test text
+
 
 \DeclareRobustCommand{\textcelcius}{\ensuremath{^{\circ}\mathrm{C}}}
 
@@ -38,9 +39,9 @@ twoside,
 \usepackage{hyperref}    % must be the last package
 \hypersetup{%
     pdfauthor            = {Kathrin Welzel and Marcel Gro{\ss}mann},
-    pdftitle             = {Autumn Recipes},
+    pdftitle             = {Wedding Recipes},
     pdfsubject           = {Recipes},
-    pdfkeywords          = {example, recipes, cookbook, xcookybooky},
+    pdfkeywords          = {wedding, recipes, cookbook},
     pdfstartview         = {FitV},
     pdfview              = {FitH},
     pdfpagemode          = {UseNone}, % Options; UseNone, UseOutlines
@@ -56,21 +57,40 @@ twoside,
 \hbadness=10000	% Ignore underfull boxes
 
 \begin{document}
-
-\title{Herbstliches Kochbuch}
+\title{Kochbuch anl"asslich der Hochzeit}
 \author{Kathrin Welzel \& Marcel Gro{\ss}mann}
-\maketitle
 
-\begin{abstract}
-    Eine herbstliche Rezeptesammlung -Sachen die wir toll finden, wenn es wieder Kohl, Fenchel und Pilze auf den Feldern und Wäldern gibt. Wir hoffen ihr findet die eine oder andere Anregung und denkt beim kochen und genießen an uns, oder ladet uns zum Essen ein. Wenn ihr wollt könnt ihr gerne an der Sammlung mitarbeiten unter \url{https://github.com/whatever4711/cookbook}
-\end{abstract}
+\begin{titlepage}
+		\setstretch{1.5}
+	\centering\fontsize{80pt}{80pt}\fontfamily{pbk}\selectfont
 
+	Kochbuch
+	
+	\huge
+	anl"asslich der Hochzeit
+	
+	von
+	
+	\fontsize{40pt}{40pt}\selectfont
+	Kathrin \& Marcel
+	
+	\vfill
+	\begin{figure}[h]
+		\includegraphics[width=\textwidth]{pic/front.jpg}
+	\end{figure}
+\LARGE
+	\today
+\end{titlepage}
+\thispagestyle{empty}
+
+
+
+\cleardoublepage
 \tableofcontents
 
-\vspace{5em}
 
-%\section{Recipes}
-%The following recipes are examples for the usage of the \texttt{xcookybooky} package. The copyright of the pictures is owned by Roman Gaus. If you are using MiKTeX~2.9 you should get no errors, no warnings and no overfull boxes. The underfull boxes are suppressed due to the settings.
+\cleardoublepage
+
 
 % background graphic
 %\setBackgroundPicture[x, y=-2cm, width=\paperwidth-4cm, height, orientation = pagecenter]{pic/background}
@@ -89,9 +109,14 @@ twoside,
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %				Recipe Section										%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-\section{Herbst}
-\includegraphics[scale=0.1]{pic/US}
+
+
+\cleardoublepage
+
+\subsection{Herbstrezepte}
+\begin{figure}[h]
+	\includegraphics[width=\textwidth]{pic/US}
+\end{figure}
 \include{recipes/PumpkinSoup}
 \include{recipes/CurlyKaleSoup}
 \include{recipes/LinsenFenchelEintopf}
@@ -103,7 +128,26 @@ twoside,
 \include{recipes/Cheese}
 \include{recipes/AvocadoMouse}
 
+
 \end{otherlanguage}
 
+\clearpage
+~\thispagestyle{empty}
+% Last page
+\clearpage
+\thispagestyle{empty}
+~
+\vfill
+\begin{center}
+\begin{tikzpicture}[scale=1.5]
+\fill (0,0) -- (-0.2, 0.1) -- (-4, 0) -- (-0.2, -0.1) -- cycle;
+\fill (0,0) -- (0.2, 0.1) -- (4, 0) -- (0.2, -0.1) -- cycle;
+\fill (0,0) circle (0.1);
+\end{tikzpicture}
+\end{center}
 
+
+    Eine hochzeitliche Rezeptesammlung -- Gerichte die wir G"aste lecker finden! Wir hoffen ihr findet die eine oder andere Anregung und denkt beim Kochen und Genießen an uns und das wundersch"one Fest.
+    
+    Wenn ihr mal ausgeschlafen habt könnt ihr unsere ganzen pull-requests unter \url{https://github.com/whatever4711/cookbook} annehmen.
 \end{document} 
