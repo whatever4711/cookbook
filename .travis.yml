@@ -8,6 +8,8 @@ sudo: required
 services:
   - docker
 
-# Building all docker container based on 64 bit image
+# Building pdf by using a docker container
 script:
-  - docker pull uniba-ktr/latex:jessie
+  - docker pull unibaktr/latex:jessie
+  - docker run -it -v ${PWD}:/src unibaktr/latex:jessie latexmk -c -pdf cookbook.tex
+  - ls -la ${PWD}
