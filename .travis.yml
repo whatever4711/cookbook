@@ -1,0 +1,13 @@
+env:
+  global:
+  - CGO_ENABLED=0
+  - GOOS=linux
+  - GOARCH=amd64
+
+sudo: required
+services:
+  - docker
+
+# Building all docker container based on 64 bit image
+script:
+  - docker pull uniba-ktr/latex:jessie
