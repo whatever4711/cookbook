@@ -3,13 +3,19 @@ env:
   - CGO_ENABLED=0
   - GOOS=linux
   - GOARCH=amd64
-
 sudo: required
 services:
-  - docker
-
-# Building pdf by using a docker container
+- docker
 script:
-  - docker pull unibaktr/latex:jessie
-  - docker run -it -v ${PWD}:/src unibaktr/latex:jessie latexmk -c -pdf cookbook.tex
-  - ls -la ${PWD}
+- docker pull unibaktr/latex:jessie
+- docker run -it -v ${PWD}:/src unibaktr/latex:jessie latexmk -c -pdf cookbook.tex
+- ls -la ${PWD}
+deploy:
+  provider: releases
+  api_key:
+    secure: $GITHUB_TOKEN
+  file: cookbook.pdf
+  skip_cleanup: true
+  on:
+    repo: whatever4711/cookbook
+    tags: true
