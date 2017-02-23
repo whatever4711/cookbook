@@ -7,7 +7,6 @@ sudo: required
 services:
 - docker
 script:
-- docker pull whatever4711/latex
 - docker run -it -v ${PWD}:/workdir whatever4711/latex latexmk -pdf cookbook.tex
 - ls -la ${PWD}
 deploy:
