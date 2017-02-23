@@ -7,5 +7,5 @@ Before uploading use <code>pic/resize.sh</code> to reduce your pictures.
 ## Build it with Docker
 
 ```[bash]
-docker run -it -v ${PWD}:/src unibaktr/latex:jessie latexmk -c -pdf cookbook.tex
+docker run -it -v ${PWD}:/workdir whatever4711/latex latexmk -pdf cookbook.tex
 ```

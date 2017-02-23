@@ -7,8 +7,8 @@ sudo: required
 services:
 - docker
 script:
-- docker pull unibaktr/latex:jessie
-- docker run -it -v ${PWD}:/src unibaktr/latex:jessie latexmk -c -pdf cookbook.tex
+- docker pull whatever4711/latex
+- docker run -it -v ${PWD}:/workdir whatever4711/latex latexmk -pdf cookbook.tex
 - ls -la ${PWD}
 deploy:
   provider: releases
